@@ -1,4 +1,4 @@
-import { ChatCompletionMessageParam, ChatCompletionTool } from 'openai/resources';
+import { ChatCompletionMessageParam } from 'openai/resources';
 import React from 'react';
 import { ChatCompletionMessageOrReactElement, Tools } from './chat-completion';
 import z from 'zod';
