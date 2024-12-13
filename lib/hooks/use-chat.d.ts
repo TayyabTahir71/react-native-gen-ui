@@ -8,7 +8,6 @@ interface UseChatParams<V extends ValidatorsObject = {}> {
     onSuccess?: (messages: ChatCompletionMessageOrReactElement[]) => void;
     onError?: (error: Error) => void;
     tools?: Tools<V>;
-    setMessages?: React.Dispatch<React.SetStateAction<ChatCompletionMessageOrReactElement[]>>;
 }
 interface UseChatResponse {
     input: string;
@@ -18,7 +17,8 @@ interface UseChatResponse {
     isStreaming: boolean;
     onInputChange: React.Dispatch<React.SetStateAction<string>>;
     handleSubmit: (msg: string | ChatCompletionContentPart[]) => Promise<void>;
-    setMessages: React.Dispatch<React.SetStateAction<ChatCompletionMessageOrReactElement[]>>;
+    setConversation: (conversation: ChatCompletionMessageOrReactElement[]) => void;
+    handleStop: () => void;
 }
 declare const useChat: <V extends ValidatorsObject = {}>(params: UseChatParams<V>) => UseChatResponse;
 export { useChat };
